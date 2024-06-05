@@ -1,25 +1,22 @@
+import { memo } from "react";
 import styled from "styled-components";
-import {StyledCommon} from "src/style/styled-common";
+import { StyledCommon } from "src/style/styled-common";
 import col = StyledCommon.col;
 import row = StyledCommon.row;
-import {ExausterDetailedDataTypes} from "./ExausterDetailedDataTypes";
-import {CSSProperties} from "react";
+import { ExausterDetailedDataTypes } from "./ExausterDetailedDataTypes";
+import { CSSProperties } from "react";
 import MainEngineElementType = ExausterDetailedDataTypes.MainEngineElementType;
-
-
-
-
-
 export namespace ListViewSmall {
-  
-  
   import GasCollectorElementType = ExausterDetailedDataTypes.GasCollectorElementType;
   import center = StyledCommon.center;
   export type ListViewSmallProps = {
-    style?: CSSProperties
-    gasCollector: GasCollectorElementType
-  }
-  export function ListViewSmall({ style, gasCollector }: ListViewSmallProps){
+    style?: CSSProperties;
+    gasCollector: GasCollectorElementType;
+  };
+  export function ListViewSmall({
+    style,
+    gasCollector
+  }: ListViewSmallProps) {
     return <Card style={style}>
       <Col>
         
@@ -34,32 +31,30 @@ export namespace ListViewSmall {
         </MarkRow>
         
       </Col>
-    </Card>
+    </Card>;
   }
-  
   const Card = styled.section`
     width: 160px;
     height: fit-content;
     ${col};
     gap: 3px;
     align-items: stretch;
-  `
-  
+  `;
   const Col = styled.div`
     ${col};
     gap: 4px;
-  `
+  `;
   const MarkRow = styled.div`
     ${row};
     align-items: center;
-  `
+  `;
   const WrapFlex1 = styled.div`
     flex: 1;
-  `
+  `;
   const Title = styled.div`
     font: 400 11px/129% Roboto;
     color: white;
-  `
+  `;
   export const Value = styled.div`
     ${center};
     min-width: 40px;
@@ -70,5 +65,5 @@ export namespace ListViewSmall {
     font: 400 12px/129% Roboto;
     color: white;
     white-space: nowrap;
-  `
+  `;
 }
