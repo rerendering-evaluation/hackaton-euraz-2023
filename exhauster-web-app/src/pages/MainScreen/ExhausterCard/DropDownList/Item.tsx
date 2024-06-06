@@ -16,6 +16,7 @@ export namespace Item {
     setHovered: (item: ItemType, isHovered: boolean, ...message: string[]) => void;
   }
   export function Item(props: ItemProps) {
+    console.log(window.globalCount++);
     const it = props.item;
     return <Item_
     //onMouseOver={()=>props.setHovered(it,true, 'over')}

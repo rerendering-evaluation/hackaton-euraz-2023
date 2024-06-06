@@ -13,6 +13,7 @@ import { SinteringMachines } from "./SinteringMachines";
 import Card from "src/components/Card";
 import { useSocket } from "src/hooks/useSocket";
 const MainScreen = memo(() => {
+  console.log(window.globalCount++);
   const [messages, sendMessage, removeMessage] = useSocket();
   const [updateTime, setUpdateTime] = useState(MockApi.updateTime);
   const [machines, setMachines] = useState(sinteringMachines);

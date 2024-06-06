@@ -11,13 +11,20 @@ export namespace SinteringMachines {
     machines: SinteringMachineType[];
   };
   export function SinteringMachinesView(props: SinteringMachinesView) {
+    console.log(window.globalCount++);
     return <MachinesList>
-      {props.machines.map(it => <Machine key={it.id}>
+      {props.machines.map(it => {
+        console.log(window.globalCount++);
+        return <Machine key={it.id}>
         <Title>{it.name}</Title>
         <ExhausterList>
-          {it.exhausters.map(it => <ExhausterCard key={it.id} exhauster={it} />)}
+          {it.exhausters.map(it => {
+              console.log(window.globalCount++);
+              return <ExhausterCard key={it.id} exhauster={it} />;
+            })}
         </ExhausterList>
-      </Machine>)}
+      </Machine>;
+      })}
     </MachinesList>;
   }
   const MachinesList = styled.section`

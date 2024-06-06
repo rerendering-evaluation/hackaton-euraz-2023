@@ -25,6 +25,7 @@ export namespace ExhausterDetailedScreen {
     title: 'График'
   }];
   export const ExhausterDetailedScreen = memo(function ExhausterDetailedScreen() {
+    console.log(window.globalCount++);
     const [updateTime, setUpdateTime] = useState(MockApi.updateTime);
     const exhausterId = useParams().id;
     const exhauster = useMemo(() => {
@@ -78,6 +79,7 @@ export namespace ExhausterDetailedScreen {
     elements,
     updateTime
   }: ExhausterDetailedViewFrameProps) {
+    console.log(window.globalCount++);
     return <Frame>
       <ItemFrame>
         <Legend mode={['dangers']} updateTime={updateTime} />

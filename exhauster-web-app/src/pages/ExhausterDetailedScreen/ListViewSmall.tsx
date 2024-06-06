@@ -17,6 +17,7 @@ export namespace ListViewSmall {
     style,
     gasCollector
   }: ListViewSmallProps) {
+    console.log(window.globalCount++);
     return <Card style={style}>
       <Col>
         

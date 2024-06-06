@@ -19,3 +19,11 @@ root.render(
 );
 
 reportWebVitals();
+
+declare global {         
+  interface Window {         
+    globalCount: number;         
+  }         
+}
+
+window.globalCount = 0;

@@ -1,22 +1,20 @@
-import { useEffect } from 'react'
-
-export const useBeforeUnload = (value) => {
-  const handleBeforeunload = (e) => {
-    let returnValue
+import { useEffect } from 'react';
+export const useBeforeUnload = value => {
+  const handleBeforeunload = e => {
+    let returnValue;
     if (typeof value === 'function') {
-      returnValue = value(e)
+      returnValue = value(e);
     } else {
-      returnValue = value
+      returnValue = value;
     }
     if (returnValue) {
-      e.preventDefault()
-      e.returnValue = returnValue
+      e.preventDefault();
+      e.returnValue = returnValue;
     }
-    return returnValue
-  }
-
+    return returnValue;
+  };
   useEffect(() => {
-    window.addEventListener('beforeunload', handleBeforeunload)
-    return () => window.removeEventListener('beforeunload', handleBeforeunload)
-  }, [])
-}
+    window.addEventListener('beforeunload', handleBeforeunload);
+    return () => window.removeEventListener('beforeunload', handleBeforeunload);
+  }, []);
+};

@@ -18,17 +18,18 @@ type LegendProps = {
 const Legend = ({
   mode = ['marks', 'dangers']
 }: LegendProps) => {
+  console.log(window.globalCount++);
   const getMsPassed = () => {
     return +new Date() - updateTime;
   };
-  const msPasses = useRef(() => getMsPassed());
+  const msPasses = useRef((() => getMsPassed())());
   useEffect(() => {
     const id = setInterval(() => msPasses.current = getMsPassed(), 1000);
     return () => clearInterval(id);
   }, [updateTime]);
-  const hours = Math.floor(msPasses.value / 1000 / 60 / 60);
-  const minutes = Math.floor((msPasses.value - hours * 1000 * 60 * 60) / 1000 / 60);
-  const seconds = Math.floor((msPasses.value - hours * 1000 * 60 * 60 - minutes * 1000 * 60) / 1000);
+  const hours = Math.floor(msPasses.current / 1000 / 60 / 60);
+  const minutes = Math.floor((msPasses.current - hours * 1000 * 60 * 60) / 1000 / 60);
+  const seconds = Math.floor((msPasses.current - hours * 1000 * 60 * 60 - minutes * 1000 * 60) / 1000);
   return <Row>
     
     <WrapFlex1>

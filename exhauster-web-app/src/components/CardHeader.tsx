@@ -8,6 +8,7 @@ type CardHeaderProps = {
   title: string;
 };
 const CardHeader = (props: CardHeaderProps) => {
+  console.log(window.globalCount++);
   return <Frame>
     <IconBox><Icon /></IconBox>
     <Title>{props.title}</Title>

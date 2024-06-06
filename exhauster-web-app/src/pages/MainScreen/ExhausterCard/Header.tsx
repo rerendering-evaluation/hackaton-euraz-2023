@@ -13,6 +13,7 @@ export namespace Header {
     id: string;
   };
   export function Header(props: HeaderProps) {
+    console.log(window.globalCount++);
     return <Frame>
       {props.isWorking && <IndicatorGreen />}
       {!props.isWorking && <IndicatorRed />}

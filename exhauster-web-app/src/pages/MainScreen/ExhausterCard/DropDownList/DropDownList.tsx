@@ -17,17 +17,30 @@ export namespace DropDownList {
     setSelectedBearers: (selectedBearers: ItemType[]) => void;
   };
   export function DropDownList(props: DropDownListProps) {
+    console.log(window.globalCount++);
     const [isOpened, setIsOpened] = useState(false);
 
     //useEffect(()=>{ isOpened && setTimeout(()=>setIsOpened(false),3000) },[isOpened])
 
     const hoveredItem = useRef((undefined as undefined | ItemType));
     useEffect(() => {
-      if (hoveredItem.value) hoveredItem.current = props.items.find(it => it.type === hoveredItem.current.value.type && it.id === hoveredItem.current.value.id);
+      if (hoveredItem.current) hoveredItem.current = props.items.find(it => hoveredItem.current && it.type === hoveredItem.current.type && it.id === hoveredItem.current.id);
     }, [props.items]);
     useEffect(() => {
-      if (hoveredItem.value) props.setSelectedBearers([hoveredItem.value]);else props.setSelectedBearers([]);
-    }, [hoveredItem.value]);
+      if (hoveredItem.current) props.setSelectedBearers([hoveredItem.current]);else props.setSelectedBearers([]);
+    }, [hoveredItem.current]);
+
+    // const [hoveredItem, setHoveredItem] = useState(undefined as undefined|ItemType)
+    // useEffect(()=>{
+    //   if (hoveredItem) setHoveredItem(props.items.find(it=>
+    //     it.type===hoveredItem.type && it.id===hoveredItem.id
+    //   ))
+    // },[props.items])
+    // useEffect(()=>{
+    //   if (hoveredItem) props.setSelectedBearers([hoveredItem])
+    //   else props.setSelectedBearers([])
+    // },[hoveredItem])
+
     const setHovered = (item: ItemType, isHovered: boolean, ...message: string[]) => {
       //console.log('setHovered', item, isHovered, message[0])
       if (isHovered) hoveredItem.current = item;else hoveredItem.current = undefined;
@@ -42,7 +55,10 @@ export namespace DropDownList {
       </TitleFrame>
       
       {isOpened && <ItemList>
-        {props.items.map(it => <Item.Item key={it.id} item={it} setHovered={setHovered} />)}
+        {props.items.map(it => {
+          console.log(window.globalCount++);
+          return <Item.Item key={it.id} item={it} setHovered={setHovered} />;
+        })}
       </ItemList>}
     
     </View>;

@@ -1,20 +1,18 @@
 import styled from "styled-components";
-import {StyledCommon} from "src/style/styled-common";
+import { StyledCommon } from "src/style/styled-common";
 import ExhausterSvg from "../../../components/ExhausterSvg";
 import center = StyledCommon.center;
-import {Item} from "./DropDownList/Item";
-
+import { Item } from "./DropDownList/Item";
 export namespace ExhausterScheme {
-  
   import ItemType = Item.ItemType;
   export type ExhausterSchemeType = {
-    bearers: ItemType[]
-  }
-  export function ExhausterScheme(props: ExhausterSchemeType){
-    
+    bearers: ItemType[];
+  };
+  export function ExhausterScheme(props: ExhausterSchemeType) {
+    console.log(window.globalCount++);
     return <Card>
-      <ExhausterSvg bearers={props.bearers}/>
-    </Card>
+      <ExhausterSvg bearers={props.bearers} />
+    </Card>;
   }
   const Card = styled.div`
     background: #EFF2F6;
@@ -22,6 +20,5 @@ export namespace ExhausterScheme {
     border-radius: 6px;
     ${center};
     padding: 10px;
-  `
-  
+  `;
 }

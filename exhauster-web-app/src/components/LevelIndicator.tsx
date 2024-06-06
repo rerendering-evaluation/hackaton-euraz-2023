@@ -22,6 +22,7 @@ export namespace LevelIndicator {
     title,
     barColor
   }: LevelIndicatorProps) {
+    console.log(window.globalCount++);
     return <Frame style={style}>
       <Bar style={{
         background: barColor,

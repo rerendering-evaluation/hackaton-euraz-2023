@@ -18,6 +18,7 @@ export namespace BearerElementCard {
     bearer,
     style
   }: BearerElementCardProps) {
+    console.log(window.globalCount++);
     return <Card style={style}>
       <TitleBox><Title>{bearer.name}</Title></TitleBox>
       <MarksCol>

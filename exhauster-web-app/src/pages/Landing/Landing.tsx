@@ -9,6 +9,7 @@ import center = StyledCommon.center;
 import col = StyledCommon.col;
 import { Link } from "react-router-dom";
 const Landing = memo(function Landing() {
+  console.log(window.globalCount++);
   return <Page>
       <ContentCol>
         

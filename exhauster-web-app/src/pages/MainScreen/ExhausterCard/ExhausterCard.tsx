@@ -17,6 +17,7 @@ export type ExhausterCardProps = {
   exhauster: ExhausterType;
 };
 function ExhausterCard(props: ExhausterCardProps) {
+  console.log(window.globalCount++);
   const [selectedBearers, setSelectedBearers] = useState<ItemType[]>([]);
   return <Exhauster>
     <Header.Header name={props.exhauster.name} isWorking={props.exhauster.isWorking} id={props.exhauster.id} />

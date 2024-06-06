@@ -17,6 +17,7 @@ export namespace MarkView {
     };
   };
   export function MarkView(props: MarkViewProps) {
+    console.log(window.globalCount++);
     return <MarkBox state={props.mark.state}>
       {props.mark.type === 'temperature' && <>
           <Symbol>T</Symbol>

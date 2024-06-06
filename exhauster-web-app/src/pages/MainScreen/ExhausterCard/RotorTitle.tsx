@@ -10,6 +10,7 @@ export namespace RotorTitle {
     replacementDate: string;
   };
   export function RotorTitle(props: RotorTitleProps) {
+    console.log(window.globalCount++);
     return <RotorTitle_>
       <TitleFrame><Title>{props.name}</Title></TitleFrame>
       <Date>{props.replacementDate}</Date>

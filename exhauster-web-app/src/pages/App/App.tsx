@@ -5,6 +5,7 @@ import Landing from "src/pages/Landing/Landing";
 import MainScreen from "src/pages/MainScreen/MainScreen";
 import { ExhausterDetailedScreen } from "../ExhausterDetailedScreen/ExhausterDetailedScreen";
 const App = memo(function App() {
+  console.log(window.globalCount++);
   return <Routes>
     <Route path='main-screen' element={<MainScreen />} />
     <Route path='exhauster-detailed/:id/*' element={<ExhausterDetailedScreen.ExhausterDetailedScreen />} />

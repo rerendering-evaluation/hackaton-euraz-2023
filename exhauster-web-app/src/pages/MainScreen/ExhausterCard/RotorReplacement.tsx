@@ -11,6 +11,7 @@ export namespace RotorReplacement {
     state: 'ok' | 'danger' | 'caution';
   };
   export function RotorReplacement(props: RotorReplacementProps) {
+    console.log(window.globalCount++);
     return <Card_>
       <Row><Title>Последняя замена ротора</Title></Row>
       <Row>

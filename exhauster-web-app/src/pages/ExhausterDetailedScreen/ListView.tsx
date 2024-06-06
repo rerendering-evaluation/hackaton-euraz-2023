@@ -15,6 +15,7 @@ export namespace ListView {
     style,
     mainEnginge
   }: ListViewProps) {
+    console.log(window.globalCount++);
     return <Card style={style}>
       <Col>
         
