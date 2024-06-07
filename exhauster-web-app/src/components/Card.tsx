@@ -1,6 +1,5 @@
+import { memo } from "react";
 import styled from "styled-components";
-
-
 const Card = styled.section`
   width: 100%;
   height: fit-content;
@@ -9,5 +8,5 @@ const Card = styled.section`
   border: 1px solid #EAEAEA;
   border-radius: 5px;
   overflow: hidden;
-`
-export default Card
+`;
+export default Card;
